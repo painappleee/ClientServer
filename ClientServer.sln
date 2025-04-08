@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35913.81 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientServer_Multithreading", "ClientServer_Multithreading\ClientServer_Multithreading.csproj", "{E8825067-CE63-4957-91D0-8A445150A7A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientServer_ORM", "ClientServer_ORM\ClientServer_ORM.csproj", "{B729828E-8FBE-4CB2-A53A-600828841573}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8825067-CE63-4957-91D0-8A445150A7A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8825067-CE63-4957-91D0-8A445150A7A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8825067-CE63-4957-91D0-8A445150A7A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8825067-CE63-4957-91D0-8A445150A7A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B729828E-8FBE-4CB2-A53A-600828841573}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B729828E-8FBE-4CB2-A53A-600828841573}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B729828E-8FBE-4CB2-A53A-600828841573}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B729828E-8FBE-4CB2-A53A-600828841573}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B04B7BD-66B5-4ACA-8E0F-535D35C33A08}
+	EndGlobalSection
+EndGlobal
