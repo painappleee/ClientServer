@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientServer_Multithreading
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientServer_ORM", "ClientServer_ORM\ClientServer_ORM.csproj", "{B729828E-8FBE-4CB2-A53A-600828841573}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientServer_ORM_Lab2", "ClientServer_ORM_Lab2\ClientServer_ORM_Lab2.csproj", "{22A9C06D-D4A4-4CA6-8E59-918033CA4752}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B729828E-8FBE-4CB2-A53A-600828841573}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B729828E-8FBE-4CB2-A53A-600828841573}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B729828E-8FBE-4CB2-A53A-600828841573}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22A9C06D-D4A4-4CA6-8E59-918033CA4752}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22A9C06D-D4A4-4CA6-8E59-918033CA4752}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22A9C06D-D4A4-4CA6-8E59-918033CA4752}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22A9C06D-D4A4-4CA6-8E59-918033CA4752}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

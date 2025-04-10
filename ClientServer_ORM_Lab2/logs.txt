@@ -1,0 +1,108 @@
+2025-04-10 19:27:25 warn: 10.04.2025 19:27:25.412 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-04-10 19:27:26 info: 10.04.2025 19:27:26.315 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."Description", "c"."Duration", "c"."Title"
+      FROM "Courses" AS "c"
+2025-04-10 19:27:26 info: 10.04.2025 19:27:26.918 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (8ms) [Parameters=[@__p_0='50'], CommandType='Text', CommandTimeout='30']
+      SELECT "s"."Id", "s"."Age", "s"."Experience", "s"."FirstName", "s"."LastName", "c"."Id", "s"."CourseId", "s"."TeacherId", "s0"."CourseId", "s0"."TeacherId", "s0"."Id", "s0"."Description", "s0"."Duration", "s0"."Title"
+      FROM "Courses" AS "c"
+      INNER JOIN (
+          SELECT "t"."Id", "t"."Age", "t"."Experience", "t"."FirstName", "t"."LastName", "c0"."CourseId", "c0"."TeacherId"
+          FROM "CourseTeachers" AS "c0"
+          INNER JOIN "Teachers" AS "t" ON "c0"."TeacherId" = "t"."Id"
+      ) AS "s" ON "c"."Id" = "s"."CourseId"
+      LEFT JOIN (
+          SELECT "c1"."CourseId", "c1"."TeacherId", "c2"."Id", "c2"."Description", "c2"."Duration", "c2"."Title"
+          FROM "CourseTeachers" AS "c1"
+          INNER JOIN "Courses" AS "c2" ON "c1"."CourseId" = "c2"."Id"
+          WHERE "c2"."Id" = @__p_0
+      ) AS "s0" ON "s"."Id" = "s0"."TeacherId"
+      WHERE "c"."Id" = @__p_0
+      ORDER BY "c"."Id", "s"."CourseId", "s"."TeacherId", "s"."Id", "s0"."CourseId", "s0"."TeacherId"
+2025-04-10 19:27:27 info: 10.04.2025 19:27:27.098 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__p_0='50'], CommandType='Text', CommandTimeout='30']
+      SELECT "s0"."Id", "s0"."Age", "s0"."FirstName", "s0"."LastName", "c"."Id", "s0"."CourseId", "s0"."StudentId", "s1"."CourseId", "s1"."StudentId", "s1"."Id", "s1"."Description", "s1"."Duration", "s1"."Title"
+      FROM "Courses" AS "c"
+      INNER JOIN (
+          SELECT "s"."Id", "s"."Age", "s"."FirstName", "s"."LastName", "c0"."CourseId", "c0"."StudentId"
+          FROM "CourseStudents" AS "c0"
+          INNER JOIN "Students" AS "s" ON "c0"."StudentId" = "s"."Id"
+      ) AS "s0" ON "c"."Id" = "s0"."CourseId"
+      LEFT JOIN (
+          SELECT "c1"."CourseId", "c1"."StudentId", "c2"."Id", "c2"."Description", "c2"."Duration", "c2"."Title"
+          FROM "CourseStudents" AS "c1"
+          INNER JOIN "Courses" AS "c2" ON "c1"."CourseId" = "c2"."Id"
+          WHERE "c2"."Id" = @__p_0
+      ) AS "s1" ON "s0"."Id" = "s1"."StudentId"
+      WHERE "c"."Id" = @__p_0
+      ORDER BY "c"."Id", "s0"."CourseId", "s0"."StudentId", "s0"."Id", "s1"."CourseId", "s1"."StudentId"
+2025-04-10 19:27:27 info: 10.04.2025 19:27:27.143 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@__p_0='51'], CommandType='Text', CommandTimeout='30']
+      SELECT "s"."Id", "s"."Age", "s"."Experience", "s"."FirstName", "s"."LastName", "c"."Id", "s"."CourseId", "s"."TeacherId", "s0"."CourseId", "s0"."TeacherId", "s0"."Id", "s0"."Description", "s0"."Duration", "s0"."Title"
+      FROM "Courses" AS "c"
+      INNER JOIN (
+          SELECT "t"."Id", "t"."Age", "t"."Experience", "t"."FirstName", "t"."LastName", "c0"."CourseId", "c0"."TeacherId"
+          FROM "CourseTeachers" AS "c0"
+          INNER JOIN "Teachers" AS "t" ON "c0"."TeacherId" = "t"."Id"
+      ) AS "s" ON "c"."Id" = "s"."CourseId"
+      LEFT JOIN (
+          SELECT "c1"."CourseId", "c1"."TeacherId", "c2"."Id", "c2"."Description", "c2"."Duration", "c2"."Title"
+          FROM "CourseTeachers" AS "c1"
+          INNER JOIN "Courses" AS "c2" ON "c1"."CourseId" = "c2"."Id"
+          WHERE "c2"."Id" = @__p_0
+      ) AS "s0" ON "s"."Id" = "s0"."TeacherId"
+      WHERE "c"."Id" = @__p_0
+      ORDER BY "c"."Id", "s"."CourseId", "s"."TeacherId", "s"."Id", "s0"."CourseId", "s0"."TeacherId"
+2025-04-10 19:27:27 info: 10.04.2025 19:27:27.148 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__p_0='51'], CommandType='Text', CommandTimeout='30']
+      SELECT "s0"."Id", "s0"."Age", "s0"."FirstName", "s0"."LastName", "c"."Id", "s0"."CourseId", "s0"."StudentId", "s1"."CourseId", "s1"."StudentId", "s1"."Id", "s1"."Description", "s1"."Duration", "s1"."Title"
+      FROM "Courses" AS "c"
+      INNER JOIN (
+          SELECT "s"."Id", "s"."Age", "s"."FirstName", "s"."LastName", "c0"."CourseId", "c0"."StudentId"
+          FROM "CourseStudents" AS "c0"
+          INNER JOIN "Students" AS "s" ON "c0"."StudentId" = "s"."Id"
+      ) AS "s0" ON "c"."Id" = "s0"."CourseId"
+      LEFT JOIN (
+          SELECT "c1"."CourseId", "c1"."StudentId", "c2"."Id", "c2"."Description", "c2"."Duration", "c2"."Title"
+          FROM "CourseStudents" AS "c1"
+          INNER JOIN "Courses" AS "c2" ON "c1"."CourseId" = "c2"."Id"
+          WHERE "c2"."Id" = @__p_0
+      ) AS "s1" ON "s0"."Id" = "s1"."StudentId"
+      WHERE "c"."Id" = @__p_0
+      ORDER BY "c"."Id", "s0"."CourseId", "s0"."StudentId", "s0"."Id", "s1"."CourseId", "s1"."StudentId"
+2025-04-10 19:27:27 info: 10.04.2025 19:27:27.153 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__p_0='52'], CommandType='Text', CommandTimeout='30']
+      SELECT "s"."Id", "s"."Age", "s"."Experience", "s"."FirstName", "s"."LastName", "c"."Id", "s"."CourseId", "s"."TeacherId", "s0"."CourseId", "s0"."TeacherId", "s0"."Id", "s0"."Description", "s0"."Duration", "s0"."Title"
+      FROM "Courses" AS "c"
+      INNER JOIN (
+          SELECT "t"."Id", "t"."Age", "t"."Experience", "t"."FirstName", "t"."LastName", "c0"."CourseId", "c0"."TeacherId"
+          FROM "CourseTeachers" AS "c0"
+          INNER JOIN "Teachers" AS "t" ON "c0"."TeacherId" = "t"."Id"
+      ) AS "s" ON "c"."Id" = "s"."CourseId"
+      LEFT JOIN (
+          SELECT "c1"."CourseId", "c1"."TeacherId", "c2"."Id", "c2"."Description", "c2"."Duration", "c2"."Title"
+          FROM "CourseTeachers" AS "c1"
+          INNER JOIN "Courses" AS "c2" ON "c1"."CourseId" = "c2"."Id"
+          WHERE "c2"."Id" = @__p_0
+      ) AS "s0" ON "s"."Id" = "s0"."TeacherId"
+      WHERE "c"."Id" = @__p_0
+      ORDER BY "c"."Id", "s"."CourseId", "s"."TeacherId", "s"."Id", "s0"."CourseId", "s0"."TeacherId"
+2025-04-10 19:27:27 info: 10.04.2025 19:27:27.158 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@__p_0='52'], CommandType='Text', CommandTimeout='30']
+      SELECT "s0"."Id", "s0"."Age", "s0"."FirstName", "s0"."LastName", "c"."Id", "s0"."CourseId", "s0"."StudentId", "s1"."CourseId", "s1"."StudentId", "s1"."Id", "s1"."Description", "s1"."Duration", "s1"."Title"
+      FROM "Courses" AS "c"
+      INNER JOIN (
+          SELECT "s"."Id", "s"."Age", "s"."FirstName", "s"."LastName", "c0"."CourseId", "c0"."StudentId"
+          FROM "CourseStudents" AS "c0"
+          INNER JOIN "Students" AS "s" ON "c0"."StudentId" = "s"."Id"
+      ) AS "s0" ON "c"."Id" = "s0"."CourseId"
+      LEFT JOIN (
+          SELECT "c1"."CourseId", "c1"."StudentId", "c2"."Id", "c2"."Description", "c2"."Duration", "c2"."Title"
+          FROM "CourseStudents" AS "c1"
+          INNER JOIN "Courses" AS "c2" ON "c1"."CourseId" = "c2"."Id"
+          WHERE "c2"."Id" = @__p_0
+      ) AS "s1" ON "s0"."Id" = "s1"."StudentId"
+      WHERE "c"."Id" = @__p_0
+      ORDER BY "c"."Id", "s0"."CourseId", "s0"."StudentId", "s0"."Id", "s1"."CourseId", "s1"."StudentId"
