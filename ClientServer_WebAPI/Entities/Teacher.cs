@@ -1,8 +1,7 @@
-﻿using Academy_ORM;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 
-namespace ClientServer_ORM_Lab2
+namespace ClientServer_WebAPI.Entities
 {
     public class Teacher
     {

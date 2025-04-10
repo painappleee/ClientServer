@@ -2,7 +2,7 @@
 using System.Diagnostics;
 
 
-namespace Academy_ORM
+namespace ClientServer_ORM_Lab2.Entities
 {
     public class Student
     {

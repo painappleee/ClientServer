@@ -1,16 +1,15 @@
-﻿using ClientServer_ORM_Lab2.Entities;
+﻿using ClientServer_WebAPI.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 
-namespace Academy_ORM_Lab2
+namespace ClientServer_WebAPI
 {
-    public class ApplicationContextLab2 : DbContext
+    public class ApplicationContext : DbContext
     {
-        public ApplicationContextLab2()
+        public ApplicationContext()
         {
             //Database.EnsureDeleted();
-            //Database.EnsureCreates();
+            Database.EnsureCreated();
+            SeedData();
         }
 
         public virtual DbSet<Course> Courses { get; set; }
@@ -29,7 +28,7 @@ namespace Academy_ORM_Lab2
             optionsBuilder.UseSqlite(config.GetConnectionString("DefaultConnection"));
 
             //для включения lazy loading
-            optionsBuilder.UseLazyLoadingProxies().UseSqlite(config.GetConnectionString("DefaultConnection"));
+            //optionsBuilder.UseLazyLoadingProxies().UseSqlite(config.GetConnectionString("DefaultConnection"));
 
             string logFilePath = "logs.txt";
 
@@ -108,123 +107,7 @@ namespace Academy_ORM_Lab2
             }
         }
 
-        // работа с курсами
-        public void CreateCourse(string title)
-        {
-            Courses.Add(new Course { Title = title });
-            SaveChanges();
-        }
-
-        public void UpdateCourse(int courseId, string newTitle)
-        {
-            var course = Courses.Find(courseId);
-            if (course != null)
-            {
-                course.Title = newTitle;
-                SaveChanges();
-            }
-        }
-
-        public void DeleteCourse(int courseId)
-        {
-            var course = Courses.Find(courseId);
-            if (course != null)
-            {
-                Courses.Remove(course);
-                SaveChanges();
-            }
-        }
-
-        // работа со студентами
-        public void CreateStudent(string firstName, string lastName)
-        {
-            Students.Add(new Student { FirstName = firstName, LastName = lastName });
-            SaveChanges();
-        }
-
-        public void UpdateStudent(int studentId, string newLastName)
-        {
-            var student = Students.Find(studentId);
-            if (student != null)
-            {
-                student.LastName = newLastName;
-                SaveChanges();
-            }
-        }
-
-        public void DeleteStudent(int studentId)
-        {
-            var student = Students.Find(studentId);
-            if (student != null)
-            {
-                Students.Remove(student);
-                SaveChanges();
-            }
-        }
-
-        // работа с учителями
-
-        public void CreateTeacher(string firstName, string lastName)
-        {
-            Teachers.Add(new Teacher { FirstName = firstName, LastName = lastName });
-            SaveChanges();
-        }
-
-        public void UpdateTeacher(int teacherId, string newLastName)
-        {
-            var teacher = Teachers.Find(teacherId);
-            if (teacher != null)
-            {
-                teacher.LastName = newLastName;
-                SaveChanges();
-            }
-        }
-
-        public void DeleteTeacher(int teacherId)
-        {
-            var teacher = Teachers.Find(teacherId);
-            if (teacher != null)
-            {
-                Teachers.Remove(teacher);
-                SaveChanges();
-            }
-        }
-
        
-        // очистка данных
-        public void DeleteAllCourses()
-        {
-            foreach (var course in Courses)
-            {
-                Courses.Remove(course);
-            }
-            SaveChanges();
-        }
-
-        public void DeleteAllStudents()
-        {
-            foreach (var student in Students)
-            {
-                Students.Remove(student);
-            }
-            SaveChanges();
-        }
-
-        public void DeleteAllTeachers()
-        {
-            foreach (var teacher in Teachers)
-            {
-                Teachers.Remove(teacher);
-            }
-            SaveChanges();
-        }
-
-        public void ClearDataBase()
-        {
-            DeleteAllCourses();
-            DeleteAllStudents();
-            DeleteAllTeachers();
-        }
 
     }
 }

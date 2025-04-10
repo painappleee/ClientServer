@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>WebAPI</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .link-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .swagger-link {
+            background-color: #85bf43;
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-align: center;
+            transition: background-color 0.2s;
+        }
+
+        .endpoint-link {
+            background-color: #e9ecef;
+            padding: 12px 20px;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .swagger-link:hover {
+            background-color: #6fa037;
+        }
+
+        .endpoint-link:hover {
+            background-color: #d1d7dc;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+        }
+
+        .endpoint-link a {
+            color: #2c3e50;
+        }
+
+        .badge {
+            font-size: 0.8em;
+            background: rgba(0,0,0,0.1);
+            padding: 2px 6px;
+            border-radius: 10px;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>WebAPI</h1>
+
+    <div class="link-container">
+        <div class="swagger-link">
+            <a href="/swagger">Swagger</a>
+        </div>
+
+        <div class="endpoint-link">
+            <a href="http://localhost:5147/Courses">Courses<span class="badge">GET</span></a>
+        </div>
+
+        <div class="endpoint-link">
+            <a href="http://localhost:5147/Teachers">Teachers<span class="badge">GET</span></a>
+        </div>
+
+        <div class="endpoint-link">
+            <a href="http://localhost:5147/Students">Students<span class="badge">GET</span></a>
+        </div>
+    </div>
+</body>
+</html>

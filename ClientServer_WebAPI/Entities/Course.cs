@@ -1,8 +1,7 @@
-﻿using ClientServer_ORM_Lab2;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 
-namespace Academy_ORM
+namespace ClientServer_WebAPI.Entities
 {
     public class Course
     {

@@ -1,4 +1,5 @@
 ﻿using Academy_ORM;
+using ClientServer_ORM_Lab2.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 
